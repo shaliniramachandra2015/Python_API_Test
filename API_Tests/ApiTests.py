@@ -77,10 +77,12 @@ class ApiTests(ApiHelpers):
 
 
 if __name__ == "__main__":
+    print("API Testing with Python and requests library")
     test_site = ApiTests(Configuration.site_url, Configuration.site_key)
     test_site.test_get_by_imdbid(Configuration.site_imdbID)
     test_site.test_get_specific_result(Configuration.movie_title_to_search)
     test_site.test_get_all_results(Configuration.site_search_word, Configuration.expected_num_movies)
     test_site.test_no_api_key_get()
     test_site.test_invalid_api_key_get()
+    print("Tests completed")
 
