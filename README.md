@@ -12,21 +12,21 @@ Tests:
 
 2. Test to verify search by imdbId.
 
-a. Verify the response header has the expected content-type.
+    a. Verify the response header has the expected content-type.
 
-b. Verify the response time is less than 30 milliseconds. 
+    b. Verify the response time is less than 30 milliseconds. 
 
 3. Test that performs a search on a search word.
 
-a. Verify all titles are a relevant match.
+    a. Verify all titles are a relevant match.
 
-b. Verify all keys included for all records in the response.
+    b. Verify all keys included for all records in the response.
 
-c. Verify year matches correct format.
+    c. Verify year matches correct format.
 
-d. Test that none of the poster links are broken.
+    d. Test that none of the poster links are broken.
 
-e. Test there are no duplicate records.
+    e. Test there are no duplicate records.
 
 4. Test response with no api key.
 
