@@ -1,5 +1,5 @@
-from API_Testing.Python_API_Test.API_Helpers.ApiHelpers import ApiHelpers
-from API_Testing.Python_API_Test.API_utils.configuration import Configuration
+from Python_API_Test.API_Helpers.ApiHelpers import ApiHelpers
+from Python_API_Test.API_utils.configuration import Configuration
 
 
 class ApiTests(ApiHelpers):
@@ -85,4 +85,3 @@ if __name__ == "__main__":
     test_site.test_no_api_key_get()
     test_site.test_invalid_api_key_get()
     print("Tests completed")
-

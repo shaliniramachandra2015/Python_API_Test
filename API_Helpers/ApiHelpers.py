@@ -1,7 +1,7 @@
 import json
 import requests
 import re
-from API_Testing.Python_API_Test.API_utils.configuration import Configuration
+from Python_API_Test.API_utils.configuration import Configuration
 
 
 class ApiHelpers:
