@@ -1,10 +1,11 @@
 # API Testing with Python and requests library
 
-OMDBApi is an open web service that does not allow addition or deletion of records. 
-For this reason, test cases for POST, UPDATE/ PUT or DELETE are not part of the project.
-
 The test cases are a sample selection to showcase API Testing with Python.
 While the priority of the use cases is taken into account, but coverage is not achieved at this time.
+
+Note:
+OMDBApi is an open web service that does not allow addition or deletion of records. 
+For this reason, test cases for POST, UPDATE/ PUT or DELETE are not in scope for the project.
 
 Tests:
 
