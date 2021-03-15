@@ -1,7 +1,7 @@
 # API Testing with Python and requests library
 
 The test cases are a sample selection to showcase API Testing with Python.
-While the priority of the use cases is taken into account, but coverage is not achieved at this time.
+While the priority of the use cases is taken into account, coverage is not achieved at this time.
 
 Note:
 OMDBApi is an open web service that does not allow addition or deletion of records. 
