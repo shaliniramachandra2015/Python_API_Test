@@ -10,13 +10,14 @@ class ApiTests(ApiHelpers):
 
     # Test case 1: Verify Get for title parameter.
     def test_get_specific_result(self, search_movie_title):
-        parameter = '?t=' + search_movie_title + "&apikey=" + self.api_key
+        # parameter = '?t=' + search_movie_title + "&apikey=" + self.api_key
+        parameter = {'t': search_movie_title, 'apikey': self.api_key}
         movie = self.a.get_method_with_parameters(parameter)
         assert movie['Title'] == search_movie_title
 
     # Test case 2: Verify Get by imdbId parameter
     def test_get_by_imdbid(self, search_movie_id):
-        parameter = '?i=' + search_movie_id + "&apikey=" + self.api_key
+        parameter = {'i': search_movie_id, 'apikey': self.api_key}
         movie = self.a.get_method_with_parameters(parameter)
         assert movie['Title'] == 'Love & Goodwill'
 
@@ -29,7 +30,7 @@ class ApiTests(ApiHelpers):
 
     # Test case 3: Verify Get for search parameter with multiple movies returned
     def test_get_all_results(self, search_movie, expected_result):
-        parameter = '?s=' + search_movie + "&apikey=" + self.api_key
+        parameter = {'s': search_movie, "apikey": self.api_key}
         movie = self.a.get_method_with_parameters(parameter)
         assert movie['totalResults'] == expected_result
 
@@ -65,13 +66,13 @@ class ApiTests(ApiHelpers):
 
     # Test 4: Verify response when request does not contain api key.
     def test_no_api_key_get(self):
-        parameter = '?s=star'
+        parameter = {'s': 'star'}
         no_api_response = self.a.get_method_no_apikey(parameter)
         assert no_api_response["Error"] == "No API key provided."
 
     # Test 5: Verify response when request contains invalid api key.
     def test_invalid_api_key_get(self):
-        parameter = '?s=star' + "&apikey=" + self.api_key + 'a'
+        parameter = {'s': 'star', "apikey": self.api_key + 'a'}
         invalid_api_response = self.a.get_method_no_apikey(parameter)
         assert invalid_api_response["Error"] == "Invalid API key!"
 

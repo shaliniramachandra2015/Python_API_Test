@@ -11,7 +11,7 @@ class ApiHelpers:
 
     # Method for Get response for request with valid api key and parameters
     def get_method_with_parameters(self, api_parameter):
-        response = requests.get(self.baseurl + api_parameter)
+        response = requests.get(url=self.baseurl, params=api_parameter)
         if response.status_code == 200:
             api_response = json.loads(response.text)
         else:
@@ -20,7 +20,7 @@ class ApiHelpers:
 
     # Get response for request and return response headers
     def get_method_header(self, api_parameter):
-        response = requests.get(self.baseurl + api_parameter)
+        response = requests.get(url=self.baseurl, params=api_parameter)
         if response.status_code == 200:
             return response.headers, response.elapsed.total_seconds()
         else:
@@ -28,7 +28,7 @@ class ApiHelpers:
 
     # Method for Get response for request with no/ invalid api key
     def get_method_no_apikey(self, api_parameter):
-        response = requests.get(self.baseurl + api_parameter)
+        response = requests.get(url=self.baseurl, params=api_parameter)
         if response.status_code == 401:
             api_response = json.loads(response.text)
         else:
