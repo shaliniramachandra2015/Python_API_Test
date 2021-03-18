@@ -10,7 +10,6 @@ class ApiTests(ApiHelpers):
 
     # Test case 1: Verify Get for title parameter.
     def test_get_specific_result(self, search_movie_title):
-        # parameter = '?t=' + search_movie_title + "&apikey=" + self.api_key
         parameter = {'t': search_movie_title, 'apikey': self.api_key}
         movie = self.a.get_method_with_parameters(parameter)
         assert movie['Title'] == search_movie_title
